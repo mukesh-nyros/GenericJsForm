@@ -1,0 +1,305 @@
+/*Generic phone and Picture upload validation*/
+
+
+
+function validation(obj)
+{
+var objtype=obj.type;
+ if (objtype=="tel")		/*Generic phone number validation start*/
+{
+var p=obj.value;
+var reg=obj.pattern;
+  if(p== null || p=="")
+   {   
+alert(obj.title);
+obj.focus();
+       return false;  
+   }  
+   else if(p.match(reg))
+   {
+return true;   
+   }  
+   
+  else  
+   {   
+     alert(obj.title);
+obj.focus();
+       return false;  
+   }  
+}					/*Generic phone number validation end*/
+
+
+
+
+else if (objtype=="password")		/*Generic password validation start*/
+{
+
+var re=obj.pattern;
+		
+		if(obj.value=="")
+			{
+				alert(obj.title);
+				obj.focus();
+				return false;
+	
+			}
+
+		else if(obj.value.match(re))
+		{
+		return true;
+		}
+	
+	else 
+	{
+	alert(obj.title);
+	obj.focus();
+	return false;
+
+	}
+
+}					/*Generic password validation end*/
+
+
+
+
+else if(objtype=="file")		/*Generic Picture upload validation start*/
+{
+var p=obj.value;
+    var pic1=/(?:gif|GIF)$/;
+    var pic2=/(?:jpg|JPG)$/;
+    var pic3=/(?:jpeg|JPEG)/;
+    var pic4=/(?:png|PNG)/;
+
+    if(p == null || p == "")
+   {
+     
+    alert(obj.title);
+      obj.focus();
+      return false;
+   } 
+
+   else if(p.match(pic1)||p.match(pic2) || p.match(pic3)|| p.match(pic4))
+   {      
+ return true;
+   }
+   else
+   {
+    alert(obj.title);
+obj.focus();
+    return false;
+   }
+
+} 					/*Generic Picture upload validation end*/
+
+
+
+
+else if(objtype=="checkbox")   /*Generic checkbox validation start*/
+{
+var a=document.getElementsByName("hobbies");
+var chk=0;
+for(var i=0;i<a.length;i++)
+{
+if (a[i].checked)
+{
+chk=1;
+return true;
+}
+ else
+{
+alert('select atleast one hobby');
+obj.focus();
+return false
+}
+if(chk==0)
+{
+alert('select hobbies');
+return  false;
+}
+else
+return true;
+}
+}
+  				/*Generic checkbox validation end*/
+
+
+
+
+else if(objtype=="email")		/*Generic Email id validation start*/
+{
+var p=obj.pattern;
+    
+    if(obj.value == null)
+   {
+     
+    alert(obj.title);
+      obj.focus();
+      return false;
+   } 
+
+   else if(obj.value.match(p))
+   {      
+ return true;
+   }
+   else
+   {
+    alert(obj.title);
+obj.focus();
+    return false;
+   }
+
+} 					/*Generic Email id validation end*/
+
+
+
+
+else 
+return false;
+}
+
+
+/*Generic text box with alphanumeric & alphabets validation*/
+
+function genericvalid(obj,minv,maxv,chk)/*chk is to get '1' from html file for alphanumeric validation,,*/
+{
+var objtype=obj.type;
+ if (objtype=="text" && chk==1)
+	{
+var reg=obj.pattern;		
+
+		if(obj.value=="")				/* check the conditons */
+
+			{
+				alert(obj.title);
+                                obj.focus();
+				return false;
+	
+			}
+
+
+		else if(obj.value.length<minv || obj.value.length>maxv)
+			{
+
+				alert(obj.title);
+                                 obj.focus();
+				return false;
+
+			}
+
+
+		else if(obj.value.match(reg)) 	
+
+			{			
+				return true;
+								
+			}
+
+	
+	}
+else if(objtype=="text" && chk==0)	/*chk is to get '0' from html file for alphabets validation*/
+{
+var regex=obj.pattern;
+var p=obj.value;
+	if( obj.value== "" )
+   {  
+alert(obj.title);
+obj.focus();
+      return false;  
+   } 
+else if(obj.value.length<minv || obj.value.length>maxv) 
+   {   
+     alert(obj.title);
+     obj.focus();
+      return false;  
+   }   
+
+   else if(p.match(regex))
+   {
+	     return true;
+   }  
+
+
+}
+else
+return false;
+
+}
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+/*Generic radio button validation*/
+function chkradio(obj)
+{
+alert(obj.value);
+     var radio_buttons ;
+var re = false;
+
+// traverse the array with radio buttons, if one is checked, make "re" true and stops
+for(var i=0; i<radio_buttons.length; i++) {
+  if (radio_buttons[i] == true) {
+     re = true;
+  }
+}
+
+// if "re" false, means no one radio button checked
+}
+
+
+
+
+
+
+
+
+
+/*DOB validation*/
+
+function Datevalid(obj)  		/*parameters passing */
+	{  
+		if ( obj.selectedIndex == 0 )		/* check the conditons */
+			{
+				 alert(obj.title);
+     					obj.focus();
+				return false;
+			} 
+		else    {
+				return true;
+			}
+
+	}  
+
+
+function selectvalid(obj)  		/*parameters passing */
+	{  
+
+		if ( obj.selectedIndex == -1 )		/* check the conditons */
+			{
+				 alert(obj.title);
+     					obj.focus();
+				return false;
+			} 
+		else if ( obj.selectedIndex == 0)		/* check the conditons */
+			{
+				 alert(obj.title);
+     					obj.focus();
+				return false;
+			} 
+		else   	
+			return true;
+			
+
+
+}
+

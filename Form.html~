@@ -1,0 +1,151 @@
+<html>
+   <head>
+          <link href="./css/form.css" rel="stylesheet" type="text/css" media="all"/>
+         
+        
+	        <script src="./js/jsgeneric.js" ></script>          <!--Includes form data functions for displaying user entered data-->
+		
+  </head>
+  <body>
+ <div id="main">
+<div class="main2">
+        <h3 align="center">Registration Form</h3>
+
+          <form name="myForm"   id="form1" method="post" onsubmit=" return chkform('myForm')"><!-- Id is for CSS style-->
+          <fieldset class="field">
+				    <!-- Start of Account Information fieldset -->
+
+         <legend>Account Information</legend>
+         <table>
+         <tr>
+         <td><label>Username:<sup style="color:red">*</sup></label></td>
+         <td><input type="text"  id="uname" class="user"  pattern="^[a-zA-Z]+[a-zA-Z0-9]+$" title="Username must contain {5-8} alphanumeric characters" onblur= "genericvalid(this,5,8,1)" ><label id='msg' ></label></td> 
+         </tr>
+         <tr>
+         <td><label>Password:<sup style="color:red">*</sup></label></td>
+         <td><input type="password" id="pwd" class="key"  pattern="^[a-zA-Z0-9]{6}$" title="Password must contain 6 characters" onblur="validation(this)"><label id='pswd' ></label></td>
+         </tr>
+         </table>
+         </fieldset>
+				   <!-- End of Account Information fieldset -->
+         <br><br>
+
+         <fieldset class="field1">
+				 <!-- Start of Personal Information fieldset-->
+         <legend>Personal Information</legend>
+         <table>
+
+         <tr>
+         <td><label>First Name:<sup style="color:red">*</sup></label></td>
+         <td><input type="text" id="fname" class="fn"  pattern="^[a-zA-Z]{3,6}$" title="Firstname must contain {3-6} alphabets" onblur= "genericvalid(this,3,6,0)" ></td>
+         </tr>
+
+         <tr>
+         <td><label>Last Name:<sup style="color:red">*</sup></label></td>
+         <td><input type="text" id="lname" class="ln"  pattern="^[a-zA-Z]{3,15}$" title="Lastname must contain {3-15} alphabets" onblur="genericvalid(this,3,15,0)"></td>
+         </tr>
+
+         <tr>
+         <td><label>Profile Pic:<sup style="color:red">*</sup></label></td>
+         <td><input type="file" name="pic" accept="image/*"  onblur="validation(this)" title="Upload picture format{jpeg or jpg or png or gif}"></td>
+         </tr>
+
+         <tr>
+         <td><label>Gender:<sup style="color:red">*</sup></label><span id='gend' ></span></td>
+         <td><input type="radio" name="gender" id="male" onblur="validation(this)">Male
+          <input type="radio" name="gender" id="female" onblur="validation(this)">FeMale
+         </td>
+         </tr>
+
+
+       <tr>
+       <td><label>Date of Birth:<sup style="color:red">*</sup></label></td>
+       <td>
+       <select name="day"  class="dob"  onblur="selectvalid(this)" title= "Select correct date of birth">
+       <option></option>
+       <option>01</option><option>02</option><option>03</option><option>04</option>
+       <option>05</option>
+       <option>06</option><option>07</option><option>08</option><option>09</option>
+       <option>10</option><option>11</option><option>12</option><option>13</option>
+       <option>14</option><option>15</option><option>16</option><option>17</option>
+       <option>17</option><option>18</option><option>20</option><option>21</option>
+       <option>22</option><option>23</option><option>24</option><option>25</option>
+       <option>26</option><option>27</option><option>28</option><option>29</option>
+       <option>30</option> <option>31</option>
+       </select>
+ 
+
+      <select name="month" class="dob"  onblur="selectvalid(this)" title= "Select correct date of birth">
+      <option></option>
+      <option>January</option><option>February</option><option>March</option>
+      <option>April</option><option>May</option><option>June</option><option>July</option>
+      <option>August</option><option>September</option><option>October</option>
+      <option>November</option><option>December</option>
+      </select>
+  
+      <select name="year" class="dob"  onblur="selectvalid(this)" title= "Select correct date of birth">
+      <option></option>
+      <option>1985</option><option>1986</option><option>1987</option><option>1988</option>
+      <option>1989</option><option>1990</option><option>1991</option><option>1992</option>
+      <option>1993</option><option>1994</option>
+      </select>
+     </td>  
+     </tr>
+
+     <tr>
+     <td><label>Hobbies:<sup style="color:red">*</sup></label></td>
+     <td>
+      <input type="checkbox" name="hobbies" id="h1"  onblur="validation(this)">Painting
+      <input type="checkbox" name="hobbies" id="h2"  onblur="validation(this)">Singing
+      <input type="checkbox" name="hobbies" id="h3"  onblur="validation(this)">Travelling
+      <input type="checkbox" name="hobbies" id="h4"  onblur="validation(this)">Dancing
+      <input type="checkbox" name="hobbies" id="h5"  onblur="validation(this)">Gardening
+      <input type="checkbox" name="hobbies" id="h6"  onblur="validation(this)">Others    </td>	
+     </tr>
+
+
+     <tr>
+     <td><label>Have been to:<sup style="color:red">*</sup></td>
+     <td><select name="countries" id ="countries"  onblur="selectvalid(this)" title= "Select countries you have visited" multiple>
+    <option></option> 
+    <option>America</option>
+     <option>Australia</option>
+     <option>China</option>
+     <option>Japan</option>
+     </select>
+     </td>
+     </tr>
+
+     </table>
+     </fieldset>
+				<!-- End of Personal Information fieldset-->
+     <br><br>
+
+
+
+     <fieldset class="field2">
+				<!-- Start of Contact Information fieldset-->
+     <legend>Contact Information</legend>
+     <table>
+     <tr>
+     <td><label>Phone :<sup style="color:red">*</sup></label></td>
+     <td><input type="tel" name="pno"   pattern= "^[+](\s)[0-9]{2}(\s)[(][0-9]{3}[)][-][0-9]{3}[-][0-9]{4}$" title="Phone number Ex:[+ 91 (000)-885-9894]" id="ph" onblur= "validation(this)" ></td>
+     </tr>
+	<tr>
+	<td><label>Email-Id:<sup style="color:red">*</sup></label></td>
+	<td><input type="email" id="em" pattern="^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$" title="Provide valid email address(Ex:abc@gmail.com)" onblur= "validation(this)"></td>
+	</tr>
+     </table>
+      <input type="submit" class="sub" id="submit" />
+     </fieldset>
+				<!-- End of Contact Information fieldset-->
+      <br>   
+
+   </form>
+ </div>
+</div>
+  
+
+</script>
+ </body>
+</html>

@@ -1,0 +1,142 @@
+
+/* heading*/
+h3
+{
+text-transform:uppercase;
+color:#000088;
+ background:#E0FFFF;
+
+}
+
+/*BODY*/
+body
+{
+   padding:0px;
+   margin:0px;
+   position:relative; 
+ background-image:url('../images/bg.jpg');
+    
+}
+
+/* image for username*/
+.user
+{
+   background-image:url('./images/User1.png');
+   background-repeat: no-repeat;
+   background-position: left;
+   padding-left: 20px;
+
+}
+/* image for password*/
+
+.key 
+{
+   background-image:url('./images/key.gif');
+   background-repeat: no-repeat;
+   background-position: left;
+   padding-left: 20px;
+
+}
+
+/* image for phone number*/
+#ph 
+{
+margin-left:5px;
+padding-left:25px;
+  background-image:url('./images/ph.jpg');
+   background-repeat: no-repeat;
+   background-position: left;
+}
+
+/*FIELDSET*/
+fieldset
+{
+width:700px;
+margin:auto;
+padding:20px;
+}
+
+/*main div*/
+#main
+{
+
+   position:relative;
+   margin:0 auto;
+   border-color: #006400;
+}
+
+/*class in main div*/
+#main .main2
+{
+width:900px;
+margin:0 auto;
+
+background-color:#00FA9A;
+border-radius: 3px;
+position: relative;
+ 
+}
+
+legend
+{
+    color:blue;
+}
+
+/*DOB styles*/
+.dob
+{
+
+border: medium #85b9e9 double;
+}
+
+/*submit buton*/
+.sub
+{
+ border: 0px none;
+    float: right;
+}
+
+/* input fields styling on focus,transitions,box shadows,scaling*/
+
+form#form1 input.user, form#form1 input.key,form#form1 input#ph,input.fn,input.ln,form#form1 input#em  {
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+	    background-color: #eaeaea;
+      background:/*-moz-*/linear-gradient(top, #ffffff, #eaeaea);
+    	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #ffffff), color-stop(1.0, #eaeaea));
+    	border: 1px solid #cacaca;
+    	color: #444;
+    	font-size: 20px;
+    	  	
+}
+
+input.user:focus, input.key:focus,input#ph:focus, input.ln:focus,input.fn:focus,input#em,textarea:focus    {
+    -webkit-box-shadow:0 0 25px #ccc;
+    box-shadow:0 0 25px #ccc;
+    box-shadow:0 0 25px #ccc;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+input.user, input.key,input#ph, input.fn, input#em,input.ln,textarea     {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color:#fff;
+    border:0px solid #ccc;
+    font-size:20px;
+    display:block;
+    margin-bottom:5px;
+    margin-top:8px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    border-radius:5px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+text=[];
+password=[];
+radio=[];
+check=[];
+cecklist=[];
+select=[];
+email=[];
+count=0;
+radioarray=[];
+count2=0;
+radiobuttongroup=[];
+fc=document.forms.length;
+len=document.forms[0].elements.length;
+
+
+for(var i=0;i<fc;i++)
+{
+for(var j=0;j<len;j++)
+{
+if(document.forms[i].elements[j].tagName=="INPUT")
+{
+ if(document.forms[i].elements[j].type=="radio")
+ {
+ radio.push(document.forms[i].elements[j]);
+ }
+
+
+if(document.forms[i].elements[j].type=="checkbox")
+{
+check.push(document.forms[i].elements[j]);
+}
+
+if(document.forms[i].elements[j].type=="text")
+{
+text.push(document.forms[i].elements[j]);
+}
+if(document.forms[i].elements[j].type=="password")
+{
+password.push(document.forms[i].elements[j]);
+}
+if(document.forms[i].elements[j].type=="email")
+{
+email.push(document.forms[i].elements[j]);
+}
+
+
+}
+else if(document.forms[i].elements[j].tagName=="SELECT")
+{
+select.push(document.forms[i].elements[j]);
+}
+
+}
+}
+
